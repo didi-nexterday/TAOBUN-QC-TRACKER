@@ -83,9 +83,9 @@
       <h2>Input Cek Harian</h2>
       <label>Cabang</label>
       <select id="outlet">
-        <option>Cabang 1</option>
-        <option>Cabang 2</option>
-        <option>Cabang 3</option>
+        <option>Outlet Kemboja</option>
+        <option>Outlet Raya</option>
+        <option>Outlet Perdos</option>
       </select>
       <label>Tanggal</label>
       <input type="date" id="tanggal">
@@ -125,7 +125,6 @@
   } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
   // ====== ISI DENGAN CONFIG PROJECT FIREBASE ANDA ======
-  // Ambil dari: Firebase Console > Project Settings > General > Your apps > SDK setup and configuration
   const firebaseConfig = {
     apiKey: "AIzaSyAcKXZNsrqu0cABvX5fnGZwM7f7Wt1DtNY",
     authDomain: "qc-bar-taobun.firebaseapp.com",
@@ -181,7 +180,7 @@
   }
 
   function renderCards(entries){
-    const outlets = ['Cabang 1','Cabang 2','Cabang 3'];
+    const outlets = ['Outlet Kemboja','Outlet Raya','Outlet Perdos'];
     const el = document.getElementById('outletCards');
     el.innerHTML = outlets.map(o=>{
       const items = entries.filter(e => e.outlet === o).slice(0,14);
